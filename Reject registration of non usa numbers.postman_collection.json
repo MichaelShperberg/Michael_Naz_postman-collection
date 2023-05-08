@@ -1,0 +1,686 @@
+{
+	"info": {
+		"_postman_id": "33ae8f99-11e5-438b-8b16-02a605ab5cb6",
+		"name": "Reject registration of non usa numbers",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25531563",
+		"_collection_link": "https://naz-canada.postman.co/workspace/Mycooler_loyalty-~8ee0bc07-6139-49b6-a8d5-8f35bd1a144e/collection/25531563-33ae8f99-11e5-438b-8b16-02a605ab5cb6?action=share&creator=25531563&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Correct US number",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name Created\", () => {\r",
+							"  pm.response.to.have.status(\"Created\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"xvqd362@gmail.com\",\r\n    \"lastName\": \"xvqd362@gmail.com\",\r\n    \"birthdate\": \"1999-12-31\",\r\n    \"gender\": \"Male\",\r\n    \"email\": \"hqf@gmail.com\",\r\n    \"password\": \"Qwer1234\",\r\n    \"phoneNumber\": \"+16472157891\",\r\n    \"zipcode\": \"33125\",\r\n    \"advertisement\": true,\r\n    \"termsAndConditions\": {\r\n        \"platform\": \"Rewards_USA\",\r\n        \"subplatform\": \"MyCooler\"\r\n    },\r\n    \"origin\": \"web\",\r\n    \"country\": \"USA\",\r\n    \"platform\": \"Rewards_USA\",\r\n    \"migration_tier\": \"NA\",\r\n    \"migration_points\": 0,\r\n    \"origin_platform_type\": \"Rewards_USA\",\r\n    \"rewards_platform_id\": \"Rewards_USA\",\r\n    \"rewards_program_id\": \"MyCooler\",\r\n    \"signup_campaign\": \"MyCooler\",\r\n    \"signup_source\": \"MyCooler\",\r\n    \"signup_brand\": \"MyCooler\",\r\n    \"registration_device_id\": \"bdb1c9f8-925e-f966-3f03-582b2dcc09e2\",\r\n    \"registration_device_model\": \"5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36\",\r\n    \"registration_device_platform\": \"MacIntel\",\r\n    \"registration_device_os\": \"MacOS\",\r\n    \"is_active\": true,\r\n    \"origin_product_OwnerId\": \"Rewards_USA\",\r\n    \"agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36\",\r\n    \"origin_url\": \"https://qa-mycooler.abi-rewards.de/signup\",\r\n    \"program\": \"MyCooler\",\r\n    \"locale\": \"en-US\",\r\n    \"create_sso\": true,\r\n    \"email_opt_in\": true,\r\n    \"push_opt_in\": true,\r\n    \"sms_opt_in\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-qa-api.abi-rewards.de/client",
+					"protocol": "https",
+					"host": [
+						"us-qa-api",
+						"abi-rewards",
+						"de"
+					],
+					"path": [
+						"client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Correct US number format and +5555555555",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name Created\", () => {\r",
+							"  pm.response.to.have.status(\"Created\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response must have a body\", function () {\r",
+							"    pm.response.to.be.withBody;\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"xvqd362@gmail.com\",\r\n    \"lastName\": \"xvqd362@gmail.com\",\r\n    \"birthdate\": \"1999-12-31\",\r\n    \"gender\": \"Male\",\r\n    \"email\": \"ios@gmail.com\",\r\n    \"password\": \"Qwer1234\",\r\n    \"phoneNumber\": \"+5555555555\",\r\n    \"zipcode\": \"63118\",\r\n    \"advertisement\": true,\r\n    \"termsAndConditions\": {\r\n        \"platform\": \"Rewards_USA\",\r\n        \"subplatform\": \"MyCooler\"\r\n    },\r\n    \"origin\": \"web\",\r\n    \"country\": \"USA\",\r\n    \"platform\": \"Rewards_USA\",\r\n    \"migration_tier\": \"NA\",\r\n    \"migration_points\": 0,\r\n    \"origin_platform_type\": \"Rewards_USA\",\r\n    \"rewards_platform_id\": \"Rewards_USA\",\r\n    \"rewards_program_id\": \"MyCooler\",\r\n    \"signup_campaign\": \"MyCooler\",\r\n    \"signup_source\": \"MyCooler\",\r\n    \"signup_brand\": \"MyCooler\",\r\n    \"registration_device_id\": \"bdb1c9f8-925e-f966-3f03-582b2dcc09e2\",\r\n    \"registration_device_model\": \"5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36\",\r\n    \"registration_device_platform\": \"MacIntel\",\r\n    \"registration_device_os\": \"MacOS\",\r\n    \"is_active\": true,\r\n    \"origin_product_OwnerId\": \"Rewards_USA\",\r\n    \"agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36\",\r\n    \"origin_url\": \"https://qa-mycooler.abi-rewards.de/signup\",\r\n    \"program\": \"MyCooler\",\r\n    \"locale\": \"en-US\",\r\n    \"create_sso\": false,\r\n    \"email_opt_in\": true,\r\n    \"push_opt_in\": true,\r\n    \"sms_opt_in\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-qa-api.abi-rewards.de/client",
+					"protocol": "https",
+					"host": [
+						"us-qa-api",
+						"abi-rewards",
+						"de"
+					],
+					"path": [
+						"client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Returne error when feature flag is missing",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name Forbidden\", () => {\r",
+							"  pm.response.to.have.status(\"Forbidden\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response must have a body\", function () {\r",
+							"    pm.response.to.be.withBody;\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"xvqd362@gmail.com\",\r\n    \"lastName\": \"xvqd362@gmail.com\",\r\n    \"birthdate\": \"1999-12-31\",\r\n    \"gender\": \"Male\",\r\n    \"email\": \"kapez@gmail.com\",\r\n    \"password\": \"Qwer1234\",\r\n    \"phoneNumber\": \"+2647215784\",\r\n    \"zipcode\": \"63118\",\r\n    \"advertisement\": true,\r\n    \"termsAndConditions\": {\r\n        \"platform\": \"Rewards_USA\",\r\n        \"subplatform\": \"MyCooler\"\r\n    },\r\n    \"origin\": \"web\",\r\n    \"country\": \"USA\",\r\n    \"platform\": \"Rewards_USA\",\r\n    \"migration_tier\": \"NA\",\r\n    \"migration_points\": 0,\r\n    \"origin_platform_type\": \"Rewards_USA\",\r\n    \"rewards_platform_id\": \"Rewards_USA\",\r\n    \"rewards_program_id\": \"MyCooler\",\r\n    \"signup_campaign\": \"MyCooler\",\r\n    \"signup_source\": \"MyCooler\",\r\n    \"signup_brand\": \"MyCooler\",\r\n    \"registration_device_id\": \"bdb1c9f8-925e-f966-3f03-582b2dcc09e2\",\r\n    \"registration_device_model\": \"5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36\",\r\n    \"registration_device_platform\": \"MacIntel\",\r\n    \"registration_device_os\": \"MacOS\",\r\n    \"is_active\": true,\r\n    \"origin_product_OwnerId\": \"Rewards_USA\",\r\n    \"agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36\",\r\n    \"origin_url\": \"https://qa-mycooler.abi-rewards.de/signup\",\r\n    \"program\": \"MyCooler\",\r\n    \"locale\": \"en-US\",\r\n    \"create_sso\": true,\r\n    \"email_opt_in\": true,\r\n    \"push_opt_in\": true,\r\n    \"sms_opt_in\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-qa-api.abi-rewards.de/client",
+					"protocol": "https",
+					"host": [
+						"us-qa-api",
+						"abi-rewards",
+						"de"
+					],
+					"path": [
+						"client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Not returne error where f.f.status false.",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"xvqd362@gmail.com\",\r\n    \"lastName\": \"xvqd362@gmail.com\",\r\n    \"birthdate\": \"1999-12-31\",\r\n    \"gender\": \"Male\",\r\n    \"email\": \"xvqd362@gmail.com\",\r\n    \"password\": \"Qwer1234\",\r\n    \"phoneNumber\": \"+18003929999\",\r\n    \"zipcode\": \"63118\",\r\n    \"advertisement\": true,\r\n    \"termsAndConditions\": {\r\n        \"platform\": \"Rewards_USA\",\r\n        \"subplatform\": \"MyCooler\"\r\n    },\r\n    \"origin\": \"web\",\r\n    \"country\": \"USA\",\r\n    \"platform\": \"Rewards_USA\",\r\n    \"migration_tier\": \"NA\",\r\n    \"migration_points\": 0,\r\n    \"origin_platform_type\": \"Rewards_USA\",\r\n    \"rewards_platform_id\": \"Rewards_USA\",\r\n    \"rewards_program_id\": \"MyCooler\",\r\n    \"signup_campaign\": \"MyCooler\",\r\n    \"signup_source\": \"MyCooler\",\r\n    \"signup_brand\": \"MyCooler\",\r\n    \"registration_device_id\": \"bdb1c9f8-925e-f966-3f03-582b2dcc09e2\",\r\n    \"registration_device_model\": \"5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36\",\r\n    \"registration_device_platform\": \"MacIntel\",\r\n    \"registration_device_os\": \"MacOS\",\r\n    \"is_active\": true,\r\n    \"origin_product_OwnerId\": \"Rewards_USA\",\r\n    \"agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36\",\r\n    \"origin_url\": \"https://qa-mycooler.abi-rewards.de/signup\",\r\n    \"program\": \"MyCooler\",\r\n    \"locale\": \"en-US\",\r\n    \"create_sso\": true,\r\n    \"email_opt_in\": true,\r\n    \"push_opt_in\": true,\r\n    \"sms_opt_in\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-qa-api.abi-rewards.de/client",
+					"protocol": "https",
+					"host": [
+						"us-qa-api",
+						"abi-rewards",
+						"de"
+					],
+					"path": [
+						"client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Phone number is empty",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name Forbidden\", () => {\r",
+							"  pm.response.to.have.status(\"Forbidden\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response must have a body\", function () {\r",
+							"    pm.response.to.be.withBody;\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"xvqd362@gmail.com\",\r\n    \"lastName\": \"xvqd362@gmail.com\",\r\n    \"birthdate\": \"1999-12-31\",\r\n    \"gender\": \"Male\",\r\n    \"email\": \"xvqd362@gmail.com\",\r\n    \"password\": \"Qwer1234\",\r\n    \"phoneNumber\": \"\",\r\n    \"zipcode\": \"63118\",\r\n    \"advertisement\": true,\r\n    \"termsAndConditions\": {\r\n        \"platform\": \"Rewards_USA\",\r\n        \"subplatform\": \"MyCooler\"\r\n    },\r\n    \"origin\": \"web\",\r\n    \"country\": \"USA\",\r\n    \"platform\": \"Rewards_USA\",\r\n    \"migration_tier\": \"NA\",\r\n    \"migration_points\": 0,\r\n    \"origin_platform_type\": \"Rewards_USA\",\r\n    \"rewards_platform_id\": \"Rewards_USA\",\r\n    \"rewards_program_id\": \"MyCooler\",\r\n    \"signup_campaign\": \"MyCooler\",\r\n    \"signup_source\": \"MyCooler\",\r\n    \"signup_brand\": \"MyCooler\",\r\n    \"registration_device_id\": \"bdb1c9f8-925e-f966-3f03-582b2dcc09e2\",\r\n    \"registration_device_model\": \"5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36\",\r\n    \"registration_device_platform\": \"MacIntel\",\r\n    \"registration_device_os\": \"MacOS\",\r\n    \"is_active\": true,\r\n    \"origin_product_OwnerId\": \"Rewards_USA\",\r\n    \"agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36\",\r\n    \"origin_url\": \"https://qa-mycooler.abi-rewards.de/signup\",\r\n    \"program\": \"MyCooler\",\r\n    \"locale\": \"en-US\",\r\n    \"create_sso\": true,\r\n    \"email_opt_in\": true,\r\n    \"push_opt_in\": true,\r\n    \"sms_opt_in\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-qa-api.abi-rewards.de/client",
+					"protocol": "https",
+					"host": [
+						"us-qa-api",
+						"abi-rewards",
+						"de"
+					],
+					"path": [
+						"client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Phone number is not US",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name Forbidden\", () => {\r",
+							"  pm.response.to.have.status(\"Forbidden\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response must have a body\", function () {\r",
+							"    pm.response.to.be.withBody;\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"xvqd362@gmail.com\",\r\n    \"lastName\": \"xvqd362@gmail.com\",\r\n    \"birthdate\": \"1999-12-31\",\r\n    \"gender\": \"Male\",\r\n    \"email\": \"xvqd362@gmail.com\",\r\n    \"password\": \"Qwer1234\",\r\n    \"phoneNumber\": \"+26472154785\",\r\n    \"zipcode\": \"63118\",\r\n    \"advertisement\": true,\r\n    \"termsAndConditions\": {\r\n        \"platform\": \"Rewards_USA\",\r\n        \"subplatform\": \"MyCooler\"\r\n    },\r\n    \"origin\": \"web\",\r\n    \"country\": \"USA\",\r\n    \"platform\": \"Rewards_USA\",\r\n    \"migration_tier\": \"NA\",\r\n    \"migration_points\": 0,\r\n    \"origin_platform_type\": \"Rewards_USA\",\r\n    \"rewards_platform_id\": \"Rewards_USA\",\r\n    \"rewards_program_id\": \"MyCooler\",\r\n    \"signup_campaign\": \"MyCooler\",\r\n    \"signup_source\": \"MyCooler\",\r\n    \"signup_brand\": \"MyCooler\",\r\n    \"registration_device_id\": \"bdb1c9f8-925e-f966-3f03-582b2dcc09e2\",\r\n    \"registration_device_model\": \"5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36\",\r\n    \"registration_device_platform\": \"MacIntel\",\r\n    \"registration_device_os\": \"MacOS\",\r\n    \"is_active\": true,\r\n    \"origin_product_OwnerId\": \"Rewards_USA\",\r\n    \"agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36\",\r\n    \"origin_url\": \"https://qa-mycooler.abi-rewards.de/signup\",\r\n    \"program\": \"MyCooler\",\r\n    \"locale\": \"en-US\",\r\n    \"create_sso\": true,\r\n    \"email_opt_in\": true,\r\n    \"push_opt_in\": true,\r\n    \"sms_opt_in\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-qa-api.abi-rewards.de/client",
+					"protocol": "https",
+					"host": [
+						"us-qa-api",
+						"abi-rewards",
+						"de"
+					],
+					"path": [
+						"client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Area code is 555",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name Forbidden\", () => {\r",
+							"  pm.response.to.have.status(\"Forbidden\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response must have a body\", function () {\r",
+							"    pm.response.to.be.withBody;\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"xvqd362@gmail.com\",\r\n    \"lastName\": \"xvqd362@gmail.com\",\r\n    \"birthdate\": \"1999-12-31\",\r\n    \"gender\": \"Male\",\r\n    \"email\": \"xvqd362@gmail.com\",\r\n    \"password\": \"Qwer1234\",\r\n    \"phoneNumber\": \"+15553929999\",\r\n    \"zipcode\": \"63118\",\r\n    \"advertisement\": true,\r\n    \"termsAndConditions\": {\r\n        \"platform\": \"Rewards_USA\",\r\n        \"subplatform\": \"MyCooler\"\r\n    },\r\n    \"origin\": \"web\",\r\n    \"country\": \"USA\",\r\n    \"platform\": \"Rewards_USA\",\r\n    \"migration_tier\": \"NA\",\r\n    \"migration_points\": 0,\r\n    \"origin_platform_type\": \"Rewards_USA\",\r\n    \"rewards_platform_id\": \"Rewards_USA\",\r\n    \"rewards_program_id\": \"MyCooler\",\r\n    \"signup_campaign\": \"MyCooler\",\r\n    \"signup_source\": \"MyCooler\",\r\n    \"signup_brand\": \"MyCooler\",\r\n    \"registration_device_id\": \"bdb1c9f8-925e-f966-3f03-582b2dcc09e2\",\r\n    \"registration_device_model\": \"5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36\",\r\n    \"registration_device_platform\": \"MacIntel\",\r\n    \"registration_device_os\": \"MacOS\",\r\n    \"is_active\": true,\r\n    \"origin_product_OwnerId\": \"Rewards_USA\",\r\n    \"agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36\",\r\n    \"origin_url\": \"https://qa-mycooler.abi-rewards.de/signup\",\r\n    \"program\": \"MyCooler\",\r\n    \"locale\": \"en-US\",\r\n    \"create_sso\": true,\r\n    \"email_opt_in\": true,\r\n    \"push_opt_in\": true,\r\n    \"sms_opt_in\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-qa-api.abi-rewards.de/client",
+					"protocol": "https",
+					"host": [
+						"us-qa-api",
+						"abi-rewards",
+						"de"
+					],
+					"path": [
+						"client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Area code is 911",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name Forbidden\", () => {\r",
+							"  pm.response.to.have.status(\"Forbidden\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response must have a body\", function () {\r",
+							"    pm.response.to.be.withBody;\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"xvqd362@gmail.com\",\r\n    \"lastName\": \"xvqd362@gmail.com\",\r\n    \"birthdate\": \"1999-12-31\",\r\n    \"gender\": \"Male\",\r\n    \"email\": \"xvqd362@gmail.com\",\r\n    \"password\": \"Qwer1234\",\r\n    \"phoneNumber\": \"+19113929999\",\r\n    \"zipcode\": \"63118\",\r\n    \"advertisement\": true,\r\n    \"termsAndConditions\": {\r\n        \"platform\": \"Rewards_USA\",\r\n        \"subplatform\": \"MyCooler\"\r\n    },\r\n    \"origin\": \"web\",\r\n    \"country\": \"USA\",\r\n    \"platform\": \"Rewards_USA\",\r\n    \"migration_tier\": \"NA\",\r\n    \"migration_points\": 0,\r\n    \"origin_platform_type\": \"Rewards_USA\",\r\n    \"rewards_platform_id\": \"Rewards_USA\",\r\n    \"rewards_program_id\": \"MyCooler\",\r\n    \"signup_campaign\": \"MyCooler\",\r\n    \"signup_source\": \"MyCooler\",\r\n    \"signup_brand\": \"MyCooler\",\r\n    \"registration_device_id\": \"bdb1c9f8-925e-f966-3f03-582b2dcc09e2\",\r\n    \"registration_device_model\": \"5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36\",\r\n    \"registration_device_platform\": \"MacIntel\",\r\n    \"registration_device_os\": \"MacOS\",\r\n    \"is_active\": true,\r\n    \"origin_product_OwnerId\": \"Rewards_USA\",\r\n    \"agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36\",\r\n    \"origin_url\": \"https://qa-mycooler.abi-rewards.de/signup\",\r\n    \"program\": \"MyCooler\",\r\n    \"locale\": \"en-US\",\r\n    \"create_sso\": true,\r\n    \"email_opt_in\": true,\r\n    \"push_opt_in\": true,\r\n    \"sms_opt_in\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-qa-api.abi-rewards.de/client",
+					"protocol": "https",
+					"host": [
+						"us-qa-api",
+						"abi-rewards",
+						"de"
+					],
+					"path": [
+						"client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Area code is 411",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name Forbidden\", () => {\r",
+							"  pm.response.to.have.status(\"Forbidden\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response must have a body\", function () {\r",
+							"    pm.response.to.be.withBody;\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"xvqd362@gmail.com\",\r\n    \"lastName\": \"xvqd362@gmail.com\",\r\n    \"birthdate\": \"1999-12-31\",\r\n    \"gender\": \"Male\",\r\n    \"email\": \"xvqd362@gmail.com\",\r\n    \"password\": \"Qwer1234\",\r\n    \"phoneNumber\": \"+14113929999\",\r\n    \"zipcode\": \"63118\",\r\n    \"advertisement\": true,\r\n    \"termsAndConditions\": {\r\n        \"platform\": \"Rewards_USA\",\r\n        \"subplatform\": \"MyCooler\"\r\n    },\r\n    \"origin\": \"web\",\r\n    \"country\": \"USA\",\r\n    \"platform\": \"Rewards_USA\",\r\n    \"migration_tier\": \"NA\",\r\n    \"migration_points\": 0,\r\n    \"origin_platform_type\": \"Rewards_USA\",\r\n    \"rewards_platform_id\": \"Rewards_USA\",\r\n    \"rewards_program_id\": \"MyCooler\",\r\n    \"signup_campaign\": \"MyCooler\",\r\n    \"signup_source\": \"MyCooler\",\r\n    \"signup_brand\": \"MyCooler\",\r\n    \"registration_device_id\": \"bdb1c9f8-925e-f966-3f03-582b2dcc09e2\",\r\n    \"registration_device_model\": \"5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36\",\r\n    \"registration_device_platform\": \"MacIntel\",\r\n    \"registration_device_os\": \"MacOS\",\r\n    \"is_active\": true,\r\n    \"origin_product_OwnerId\": \"Rewards_USA\",\r\n    \"agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36\",\r\n    \"origin_url\": \"https://qa-mycooler.abi-rewards.de/signup\",\r\n    \"program\": \"MyCooler\",\r\n    \"locale\": \"en-US\",\r\n    \"create_sso\": true,\r\n    \"email_opt_in\": true,\r\n    \"push_opt_in\": true,\r\n    \"sms_opt_in\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-qa-api.abi-rewards.de/client",
+					"protocol": "https",
+					"host": [
+						"us-qa-api",
+						"abi-rewards",
+						"de"
+					],
+					"path": [
+						"client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Area code is X00",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name Forbidden\", () => {\r",
+							"  pm.response.to.have.status(\"Forbidden\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response must have a body\", function () {\r",
+							"    pm.response.to.be.withBody;\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"xvqd362@gmail.com\",\r\n    \"lastName\": \"xvqd362@gmail.com\",\r\n    \"birthdate\": \"1999-12-31\",\r\n    \"gender\": \"Male\",\r\n    \"email\": \"xvqd362@gmail.com\",\r\n    \"password\": \"Qwer1234\",\r\n    \"phoneNumber\": \"+16003929999\",\r\n    \"zipcode\": \"63118\",\r\n    \"advertisement\": true,\r\n    \"termsAndConditions\": {\r\n        \"platform\": \"Rewards_USA\",\r\n        \"subplatform\": \"MyCooler\"\r\n    },\r\n    \"origin\": \"web\",\r\n    \"country\": \"USA\",\r\n    \"platform\": \"Rewards_USA\",\r\n    \"migration_tier\": \"NA\",\r\n    \"migration_points\": 0,\r\n    \"origin_platform_type\": \"Rewards_USA\",\r\n    \"rewards_platform_id\": \"Rewards_USA\",\r\n    \"rewards_program_id\": \"MyCooler\",\r\n    \"signup_campaign\": \"MyCooler\",\r\n    \"signup_source\": \"MyCooler\",\r\n    \"signup_brand\": \"MyCooler\",\r\n    \"registration_device_id\": \"bdb1c9f8-925e-f966-3f03-582b2dcc09e2\",\r\n    \"registration_device_model\": \"5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36\",\r\n    \"registration_device_platform\": \"MacIntel\",\r\n    \"registration_device_os\": \"MacOS\",\r\n    \"is_active\": true,\r\n    \"origin_product_OwnerId\": \"Rewards_USA\",\r\n    \"agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36\",\r\n    \"origin_url\": \"https://qa-mycooler.abi-rewards.de/signup\",\r\n    \"program\": \"MyCooler\",\r\n    \"locale\": \"en-US\",\r\n    \"create_sso\": true,\r\n    \"email_opt_in\": true,\r\n    \"push_opt_in\": true,\r\n    \"sms_opt_in\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-qa-api.abi-rewards.de/client",
+					"protocol": "https",
+					"host": [
+						"us-qa-api",
+						"abi-rewards",
+						"de"
+					],
+					"path": [
+						"client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Area code is 1xx",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name Forbidden\", () => {\r",
+							"  pm.response.to.have.status(\"Forbidden\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response must have a body\", function () {\r",
+							"    pm.response.to.be.withBody;\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"xvqd362@gmail.com\",\r\n    \"lastName\": \"xvqd362@gmail.com\",\r\n    \"birthdate\": \"1999-12-31\",\r\n    \"gender\": \"Male\",\r\n    \"email\": \"xvqd362@gmail.com\",\r\n    \"password\": \"Qwer1234\",\r\n    \"phoneNumber\": \"+11332157894\",\r\n    \"zipcode\": \"63118\",\r\n    \"advertisement\": true,\r\n    \"termsAndConditions\": {\r\n        \"platform\": \"Rewards_USA\",\r\n        \"subplatform\": \"MyCooler\"\r\n    },\r\n    \"origin\": \"web\",\r\n    \"country\": \"USA\",\r\n    \"platform\": \"Rewards_USA\",\r\n    \"migration_tier\": \"NA\",\r\n    \"migration_points\": 0,\r\n    \"origin_platform_type\": \"Rewards_USA\",\r\n    \"rewards_platform_id\": \"Rewards_USA\",\r\n    \"rewards_program_id\": \"MyCooler\",\r\n    \"signup_campaign\": \"MyCooler\",\r\n    \"signup_source\": \"MyCooler\",\r\n    \"signup_brand\": \"MyCooler\",\r\n    \"registration_device_id\": \"bdb1c9f8-925e-f966-3f03-582b2dcc09e2\",\r\n    \"registration_device_model\": \"5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36\",\r\n    \"registration_device_platform\": \"MacIntel\",\r\n    \"registration_device_os\": \"MacOS\",\r\n    \"is_active\": true,\r\n    \"origin_product_OwnerId\": \"Rewards_USA\",\r\n    \"agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36\",\r\n    \"origin_url\": \"https://qa-mycooler.abi-rewards.de/signup\",\r\n    \"program\": \"MyCooler\",\r\n    \"locale\": \"en-US\",\r\n    \"create_sso\": true,\r\n    \"email_opt_in\": true,\r\n    \"push_opt_in\": true,\r\n    \"sms_opt_in\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-qa-api.abi-rewards.de/client",
+					"protocol": "https",
+					"host": [
+						"us-qa-api",
+						"abi-rewards",
+						"de"
+					],
+					"path": [
+						"client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Area code is x9x",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name Forbidden\", () => {\r",
+							"  pm.response.to.have.status(\"Forbidden\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response must have a body\", function () {\r",
+							"    pm.response.to.be.withBody;\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"xvqd362@gmail.com\",\r\n    \"lastName\": \"xvqd362@gmail.com\",\r\n    \"birthdate\": \"1999-12-31\",\r\n    \"gender\": \"Male\",\r\n    \"email\": \"xvqd362@gmail.com\",\r\n    \"password\": \"Qwer1234\",\r\n    \"phoneNumber\": \"+16903929999\",\r\n    \"zipcode\": \"63118\",\r\n    \"advertisement\": true,\r\n    \"termsAndConditions\": {\r\n        \"platform\": \"Rewards_USA\",\r\n        \"subplatform\": \"MyCooler\"\r\n    },\r\n    \"origin\": \"web\",\r\n    \"country\": \"USA\",\r\n    \"platform\": \"Rewards_USA\",\r\n    \"migration_tier\": \"NA\",\r\n    \"migration_points\": 0,\r\n    \"origin_platform_type\": \"Rewards_USA\",\r\n    \"rewards_platform_id\": \"Rewards_USA\",\r\n    \"rewards_program_id\": \"MyCooler\",\r\n    \"signup_campaign\": \"MyCooler\",\r\n    \"signup_source\": \"MyCooler\",\r\n    \"signup_brand\": \"MyCooler\",\r\n    \"registration_device_id\": \"bdb1c9f8-925e-f966-3f03-582b2dcc09e2\",\r\n    \"registration_device_model\": \"5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36\",\r\n    \"registration_device_platform\": \"MacIntel\",\r\n    \"registration_device_os\": \"MacOS\",\r\n    \"is_active\": true,\r\n    \"origin_product_OwnerId\": \"Rewards_USA\",\r\n    \"agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36\",\r\n    \"origin_url\": \"https://qa-mycooler.abi-rewards.de/signup\",\r\n    \"program\": \"MyCooler\",\r\n    \"locale\": \"en-US\",\r\n    \"create_sso\": true,\r\n    \"email_opt_in\": true,\r\n    \"push_opt_in\": true,\r\n    \"sms_opt_in\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-qa-api.abi-rewards.de/client",
+					"protocol": "https",
+					"host": [
+						"us-qa-api",
+						"abi-rewards",
+						"de"
+					],
+					"path": [
+						"client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "phoneNumber center office XXX 1XX XXXX",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {\r",
+							"    pm.response.to.have.status(403);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Status code name Forbidden\", () => {\r",
+							"  pm.response.to.have.status(\"Forbidden\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response must have a body\", function () {\r",
+							"    pm.response.to.be.withBody;\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"xvqd362@gmail.com\",\r\n    \"lastName\": \"xvqd362@gmail.com\",\r\n    \"birthdate\": \"1999-12-31\",\r\n    \"gender\": \"Male\",\r\n    \"email\": \"xvqd362@gmail.com\",\r\n    \"password\": \"Qwer1234\",\r\n    \"phoneNumber\": \"+16471929999\",\r\n    \"zipcode\": \"63118\",\r\n    \"advertisement\": true,\r\n    \"termsAndConditions\": {\r\n        \"platform\": \"Rewards_USA\",\r\n        \"subplatform\": \"MyCooler\"\r\n    },\r\n    \"origin\": \"web\",\r\n    \"country\": \"USA\",\r\n    \"platform\": \"Rewards_USA\",\r\n    \"migration_tier\": \"NA\",\r\n    \"migration_points\": 0,\r\n    \"origin_platform_type\": \"Rewards_USA\",\r\n    \"rewards_platform_id\": \"Rewards_USA\",\r\n    \"rewards_program_id\": \"MyCooler\",\r\n    \"signup_campaign\": \"MyCooler\",\r\n    \"signup_source\": \"MyCooler\",\r\n    \"signup_brand\": \"MyCooler\",\r\n    \"registration_device_id\": \"bdb1c9f8-925e-f966-3f03-582b2dcc09e2\",\r\n    \"registration_device_model\": \"5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36\",\r\n    \"registration_device_platform\": \"MacIntel\",\r\n    \"registration_device_os\": \"MacOS\",\r\n    \"is_active\": true,\r\n    \"origin_product_OwnerId\": \"Rewards_USA\",\r\n    \"agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36\",\r\n    \"origin_url\": \"https://qa-mycooler.abi-rewards.de/signup\",\r\n    \"program\": \"MyCooler\",\r\n    \"locale\": \"en-US\",\r\n    \"create_sso\": true,\r\n    \"email_opt_in\": true,\r\n    \"push_opt_in\": true,\r\n    \"sms_opt_in\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-qa-api.abi-rewards.de/client",
+					"protocol": "https",
+					"host": [
+						"us-qa-api",
+						"abi-rewards",
+						"de"
+					],
+					"path": [
+						"client"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
