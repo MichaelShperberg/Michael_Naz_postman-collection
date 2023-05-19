@@ -1,0 +1,510 @@
+{
+	"info": {
+		"_postman_id": "b579cf48-66af-48e3-817d-22be8ced2f00",
+		"name": "Rebate Endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25531563",
+		"_collection_link": "https://naz-canada.postman.co/workspace/Mycooler_loyalty-~8ee0bc07-6139-49b6-a8d5-8f35bd1a144e/collection/25531563-b579cf48-66af-48e3-817d-22be8ced2f00?action=share&creator=25531563&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Get Rebate by Code Endpoint",
+			"item": [
+				{
+					"name": "Origin is missing",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Event object failed validation\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Event object failed validation\");\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"Bad Request\");\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Origin",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://us-qa-api.abi-rewards.de/custom/mycooler/rebates/AB-7332",
+							"protocol": "https",
+							"host": [
+								"us-qa-api",
+								"abi-rewards",
+								"de"
+							],
+							"path": [
+								"custom",
+								"mycooler",
+								"rebates",
+								"AB-7332"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Staus code 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code name OK\", () => {\r",
+									"  pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response must have a body\", function () {\r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Origin",
+								"value": "http://localhost:3000",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://us-qa-api.abi-rewards.de/custom/mycooler/rebates/AB-7332",
+							"protocol": "https",
+							"host": [
+								"us-qa-api",
+								"abi-rewards",
+								"de"
+							],
+							"path": [
+								"custom",
+								"mycooler",
+								"rebates",
+								"AB-7332"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Not prod Origin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code name OK\", () => {\r",
+									"  pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response must have a body\", function () {\r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Origin",
+								"value": "https://us-qa-api.abi-rewards.de",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://us-qa-api.abi-rewards.de/custom/mycooler/rebates/AB-7332",
+							"protocol": "https",
+							"host": [
+								"us-qa-api",
+								"abi-rewards",
+								"de"
+							],
+							"path": [
+								"custom",
+								"mycooler",
+								"rebates",
+								"AB-7332"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Prod origin",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Origin",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://us-qa-api.abi-rewards.de/custom/mycooler/rebates/AB-7332",
+							"protocol": "https",
+							"host": [
+								"us-qa-api",
+								"abi-rewards",
+								"de"
+							],
+							"path": [
+								"custom",
+								"mycooler",
+								"rebates",
+								"AB-7332"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "No rebate found",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Origin",
+								"value": "http://localhost:3000",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://us-qa-api.abi-rewards.de/custom/mycooler/rebates/AB-7038",
+							"protocol": "https",
+							"host": [
+								"us-qa-api",
+								"abi-rewards",
+								"de"
+							],
+							"path": [
+								"custom",
+								"mycooler",
+								"rebates",
+								"AB-7038"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get all rebates endpoint",
+			"item": [
+				{
+					"name": "Status code 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code name OK\", () => {\r",
+									"  pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response must have a body\", function () {\r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Origin",
+								"value": "http://localhost:3000",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://us-qa-api.abi-rewards.de/custom/mycooler/rebates",
+							"protocol": "https",
+							"host": [
+								"us-qa-api",
+								"abi-rewards",
+								"de"
+							],
+							"path": [
+								"custom",
+								"mycooler",
+								"rebates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Origin is missing Status code 400",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Event object failed validation\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Event object failed validation\");\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"Bad Request\");\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Origin",
+								"value": "http://localhost:3000",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://us-qa-api.abi-rewards.de/custom/mycooler/rebates",
+							"protocol": "https",
+							"host": [
+								"us-qa-api",
+								"abi-rewards",
+								"de"
+							],
+							"path": [
+								"custom",
+								"mycooler",
+								"rebates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Not prod origin Status code 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code name OK\", () => {\r",
+									"  pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response must have a body\", function () {\r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Origin",
+								"value": "https://us-release -api.abi-rewards.de",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://us-qa-api.abi-rewards.de/custom/mycooler/rebates",
+							"protocol": "https",
+							"host": [
+								"us-qa-api",
+								"abi-rewards",
+								"de"
+							],
+							"path": [
+								"custom",
+								"mycooler",
+								"rebates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Not prod origin Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status code name OK\", () => {\r",
+									"  pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response must have a body\", function () {\r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Origin",
+								"value": "http://localhost:3000",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://us-qa-api.abi-rewards.de/custom/mycooler/rebates",
+							"protocol": "https",
+							"host": [
+								"us-qa-api",
+								"abi-rewards",
+								"de"
+							],
+							"path": [
+								"custom",
+								"mycooler",
+								"rebates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List of endpoints after deleted in Mongo",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Origin",
+								"value": "http://localhost:3000",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://us-qa-api.abi-rewards.de/custom/mycooler/rebates",
+							"protocol": "https",
+							"host": [
+								"us-qa-api",
+								"abi-rewards",
+								"de"
+							],
+							"path": [
+								"custom",
+								"mycooler",
+								"rebates"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
